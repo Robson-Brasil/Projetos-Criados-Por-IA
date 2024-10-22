@@ -1,0 +1,262 @@
+<html><head><base href="https://iot-dashboard.example.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automações em IoT - Dashboard</title>
+<style>
+    :root {
+        --bg-color: #f0f2f5;
+        --text-color: #333;
+        --card-bg: #ffffff;
+        --header-bg: #ffffff;
+        --footer-bg: #ffffff;
+    }
+    .dark-mode {
+        --bg-color: #1a1a1a;
+        --text-color: #f0f0f0;
+        --card-bg: #2c2c2c;
+        --header-bg: #2c2c2c;
+        --footer-bg: #2c2c2c;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+        background-color: var(--header-bg);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .dark-mode-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+    }
+    main {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .dashboard {
+        background-color: var(--card-bg);
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        max-width: 1000px;
+        width: 100%;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ff4d4d;
+        transition: .4s;
+        border-radius: 34px;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+    input:checked + .slider {
+        background-color: #4CAF50;
+    }
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 1 calc(25% - 20px);
+        min-width: 120px;
+    }
+    .button-label {
+        margin-top: 10px;
+        font-weight: bold;
+        text-align: center;
+    }
+    footer {
+        background-color: var(--footer-bg);
+        text-align: center;
+        padding: 10px;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .button-container {
+            flex: 1 1 calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .button-container {
+            flex: 1 1 100%;
+        }
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .dashboard {
+            padding: 15px;
+        }
+        .button-container {
+            min-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="#4CAF50" />
+                <path d="M30 50 L70 50 M50 30 L50 70" stroke="white" stroke-width="8" />
+            </svg>
+            <h1>Automações em IoT</h1>
+        </div>
+        <button class="dark-mode-toggle" id="darkModeToggle">🌓</button>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch1">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 1</span>
+            </div>
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch2">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 2</span>
+            </div>
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch3">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 3</span>
+            </div>
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch4">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 4</span>
+            </div>
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch5">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 5</span>
+            </div>
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch6">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 6</span>
+            </div>
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch7">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 7</span>
+            </div>
+            <div class="button-container">
+                <label class="switch">
+                    <input type="checkbox" id="switch8">
+                    <span class="slider"></span>
+                </label>
+                <span class="button-label">Dispositivo 8</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Robson Brasil</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.switch input').forEach(input => {
+            input.addEventListener('change', function() {
+                const slider = this.nextElementSibling;
+                if (this.checked) {
+                    slider.style.backgroundColor = '#4CAF50';
+                } else {
+                    slider.style.backgroundColor = '#ff4d4d';
+                }
+            });
+        });
+
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = '☀️';
+            } else {
+                darkModeToggle.textContent = '🌓';
+            }
+        });
+    </script>
+</body>
+</html>

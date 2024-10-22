@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Resistores para LEDs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #333;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .calculo {
+            font-family: "Courier New", monospace;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Resistores para LEDs</h1>
+    
+    <h2>LED Vermelho (2.1V)</h2>
+    <table>
+        <tr><th>Fonte (V)</th><th>Resistor (Ω)</th><th>Cálculo</th></tr>
+        <tr>
+            <td>3V</td>
+            <td>45Ω</td>
+            <td class="calculo">R = (3V - 2.1V) / 0.02A = 0.9V / 0.02A = 45Ω</td>
+        </tr>
+        <tr>
+            <td>5V</td>
+            <td>145Ω</td>
+            <td class="calculo">R = (5V - 2.1V) / 0.02A = 2.9V / 0.02A = 145Ω</td>
+        </tr>
+        <tr>
+            <td>9V</td>
+            <td>345Ω</td>
+            <td class="calculo">R = (9V - 2.1V) / 0.02A = 6.9V / 0.02A = 345Ω</td>
+        </tr>
+        <tr>
+            <td>12V</td>
+            <td>495Ω</td>
+            <td class="calculo">R = (12V - 2.1V) / 0.02A = 9.9V / 0.02A = 495Ω</td>
+        </tr>
+        <tr>
+            <td>15V</td>
+            <td>695Ω</td>
+            <td class="calculo">R = (15V - 2.1V) / 0.02A = 12.9V / 0.02A = 695Ω</td>
+        </tr>
+        <tr>
+            <td>19V</td>
+            <td>895Ω</td>
+            <td class="calculo">R = (19V - 2.1V) / 0.02A = 16.9V / 0.02A = 895Ω</td>
+        </tr>
+        <tr>
+            <td>24V</td>
+            <td>1095Ω</td>
+            <td class="calculo">R = (24V - 2.1V) / 0.02A = 21.9V / 0.02A = 1095Ω</td>
+        </tr>
+    </table>
+
+    <h2>LED Verde (2.2V)</h2>
+    <table>
+        <tr><th>Fonte (V)</th><th>Resistor (Ω)</th><th>Cálculo</th></tr>
+        <tr>
+            <td>3V</td>
+            <td>40Ω</td>
+            <td class="calculo">R = (3V - 2.2V) / 0.02A = 0.8V / 0.02A = 40Ω</td>
+        </tr>
+        <tr>
+            <td>5V</td>
+            <td>140Ω</td>
+            <td class="calculo">R = (5V - 2.2V) / 0.02A = 2.8V / 0.02A = 140Ω</td>
+        </tr>
+        <tr>
+            <td>9V</td>
+            <td>340Ω</td>
+            <td class="calculo">R = (9V - 2.2V) / 0.02A = 6.8V / 0.02A = 340Ω</td>
+        </tr>
+        <tr>
+            <td>12V</td>
+            <td>490Ω</td>
+            <td class="calculo">R = (12V - 2.2V) / 0.02A = 9.8V / 0.02A = 490Ω</td>
+        </tr>
+        <tr>
+            <td>15V</td>
+            <td>690Ω</td>
+            <td class="calculo">R = (15V - 2.2V) / 0.02A = 12.8V / 0.02A = 690Ω</td>
+        </tr>
+        <tr>
+            <td>19V</td>
+            <td>890Ω</td>
+            <td class="calculo">R = (19V - 2.2V) / 0.02A = 16.8V / 0.02A = 890Ω</td>
+        </tr>
+        <tr>
+            <td>24V</td>
+            <td>1090Ω</td>
+            <td class="calculo">R = (24V - 2.2V) / 0.02A = 21.8V / 0.02A = 1090Ω</td>
+        </tr>
+    </table>
+
+    <h2>LED Azul (3.2V)</h2>
+    <table>
+        <tr><th>Fonte (V)</th><th>Resistor (Ω)</th><th>Cálculo</th></tr>
+        <tr>
+            <td>3V</td>
+            <td>N/A (Tensão insuficiente)</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>5V</td>
+            <td>90Ω</td>
+            <td class="calculo">R = (5V - 3.2V) / 0.02A = 1.8V / 0.02A = 90Ω</td>
+        </tr>
+        <tr>
+            <td>9V</td>
+            <td>290Ω</td>
+            <td class="calculo">R = (9V - 3.2V) / 0.02A = 5.8V / 0.02A = 290Ω</td>
+        </tr>
+        <tr>
+            <td>12V</td>
+            <td>440Ω</td>
+            <td class="calculo">R = (12V - 3.2V) / 0.02A = 8.8V / 0.02A = 440Ω</td>
+        </tr>
+        <tr>
+            <td>15V</td>
+            <td>640Ω</td>
+            <td class="calculo">R = (15V - 3.2V) / 0.02A = 11.8V / 0.02A = 640Ω</td>
+        </tr>
+        <tr>
+            <td>19V</td>
+            <td>840Ω</td>
+            <td class="calculo">R = (19V - 3.2V) / 0.02A = 15.8V / 0.02A = 840Ω</td>
+        </tr>
+        <tr>
+            <td>24V</td>
+            <td>1040Ω</td>
+            <td class="calculo">R = (24V - 3.2V) / 0.02A = 20.8V / 0.02A = 1040Ω</td>
+        </tr>
+    </table>
+
+    <h2>LED Branco (3.6V)</h2>
+    <table>
+        <tr><th>Fonte (V)</th><th>Resistor (Ω)</th><th>Cálculo</th></tr>
+        <tr>
+            <td>3V</td>
+            <td>N/A (Tensão insuficiente)</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>5V</td>
+            <td>70Ω</td>
+            <td class="calculo">R = (5V - 3.6V) / 0.02A = 1.4V / 0.02A = 70Ω</td>
+        </tr>
+        <tr>
+            <td>9V</td>
+            <td>270Ω</td>
+            <td class="calculo">R = (9V - 3.6V) / 0.02A = 5.4V / 0.02A = 270Ω</td>
+        </tr>
+        <tr>
+            <td>12V</td>
+            <td>420Ω</td>
+            <td class="calculo">R = (12V - 3.6V) / 0.02A = 8.4V / 0.02A = 420Ω</td>
+        </tr>
+        <tr>
+            <td>15V</td>
+            <td>620Ω</td>
+            <td class="calculo">R = (15V - 3.6V) / 0.02A = 11.4V / 0.02A = 620Ω</td>
+        </tr>
+        <tr>
+            <td>19V</td>
+            <td>820Ω</td>
+            <td class="calculo">R = (19V - 3.6V) / 0.02A = 15.4V / 0.02A = 820Ω</td>
+        </tr>
+        <tr>
+            <td>24V</td>
+            <td>1020Ω</td>
+            <td class="calculo">R = (24V - 3.6V) / 0.02A = 20.4V / 0.02A = 1020Ω</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog pessoal de Robson Brasil - Explorando o mundo da IoT, programação e eletrônica.">
+    <title>Robson Brasil - Blog Pessoal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Pessoal</h1>
+        <nav>
+            <a href="#sobre-mim">Sobre Mim</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#iot-mqtt">O que é IoT e MQTT?</a>
+            <a href="https://github.com/Robson-Brasil" target="_blank">Meu GitHub</a>
+        </nav>
+    </header>
+
+    <section id="sobre-mim">
+        <h2>Sobre Mim</h2>
+        <p>Olá! Meu nome é Robson Brasil e estou me aventurando no mundo da programação e eletrônica, aplicando tudo no universo da IoT (Internet of Things). Estou aprendendo sobre diversos protocolos de comunicação, com destaque para o MQTT e HTTP, que uso para serviços web e controle de dispositivos remotos, como o ESP32.</p>
+    </section>
+
+    <section id="iot-mqtt">
+        <h2>O que é IoT e MQTT?</h2>
+        <p>A <strong>Internet of Things (IoT)</strong> é a interconexão de dispositivos físicos através da internet e/ou uma rede local. Isso permite que objetos "inteligentes", como lâmpadas, sensores e aparelhos, possam se comunicar, coletar dados e tomar decisões automáticas.</p>
+        <p>O <strong>MQTT</strong> (Message Queuing Telemetry Transport) é um dos protocolos mais populares usados na IoT. Ele é leve, eficiente e ideal para dispositivos com recursos limitados, como o ESP32. Através dele, dispositivos podem enviar ("publish") e receber ("subscribe") mensagens de maneira rápida e eficiente, permitindo a automação de diversas tarefas do dia a dia, como controlar luzes, monitorar sensores e muito mais.</p>
+        <p>No meu aprendizado com IoT, tenho aplicado o MQTT para construir soluções que facilitam a automação residencial e o controle de dispositivos via wireless com ou sem acesso a internet. Imagine poder ligar o ar-condicionado da sua casa antes de chegar ou monitorar a temperatura de um ambiente remotamente – tudo isso é possível com IoT e MQTT!</p>
+    </section>
+
+    <section id="projetos">
+        <h2>Projetos de Aprendizado</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Projeto 1: Sistema IoT com ESP32, MQTT, DHT22, BMP180 e Relés (Finalizado, testado e em uso)</h3>
+                <p>Um projeto completo de automação residencial com ESP32, sensores de temperatura, umidade, pressão atmosférica e altitude, controle de relés, servidor web, e integração com Node-RED e Home Assistant.</p>
+                <a href="https://github.com/Robson-Brasil/Projeto-ESP32-MQTT-DHT22-BMP180-Reles-WebServer-NodeRed-HomeAssistant" target="_blank">Ver no GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Projeto 2: Controle de Acesso com ESP32 e RFID (Ainda em desenvolvimento, mas com 99% pronto)</h3>
+                <p>Projeto de controle de acesso utilizando ESP32, RFID RC522, relés e LEDs indicadores e incluindo suporte a cartão mestre para gerenciamento dos acessosm junto a tudo isso um display LCD de 20x04 pra visualizar as ações.</p>
+                <a href="https://github.com/Robson-Brasil/Projeto-Controle-de-Acesso-com-ESP32-RFID-RC222-RELE-LEDs-CARTAOMESTRE" target="_blank">Ver no GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Robson Brasil - Explorando IoT e Programação</p>
+    </footer>
+
+    <button class="toggle-dark-mode" onclick="toggleDarkMode()">Alternar Dark/Light Mode</button>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1c1c1c;
+    color: #fff;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000;
+}
+
+header {
+    background: #0054d3e7;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+nav {
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+section {
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0d6dfda0;
+    display: inline-block;
+}
+
+p {
+    margin: 15px 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #000000;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+body.light-mode .project-card {
+    background: #ffffff;
+    color: #000000;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card a {
+    display: block;
+    margin-top: 10px;
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    color: #ffc107;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0054d3e7;
+    color: white;
+}
+
+.toggle-dark-mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+}
+
+.toggle-dark-mode:hover {
+    background: #ffffff;
+    color: #000;
+}
+
+body.light-mode .toggle-dark-mode {
+    background: #ffffff;
+    color: #000;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
+body.light-mode .toggle-dark-mode:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Responsividade para telas menores que 368px */
+@media (max-width: 368px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .project-card {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .toggle-dark-mode {
+        bottom: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 0.5rem;
+    }
+
+    p {
+        text-align: center;
+    }
+}

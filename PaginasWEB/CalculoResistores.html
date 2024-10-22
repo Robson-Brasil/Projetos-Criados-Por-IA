@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Resistores para LEDs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #ffcc00;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            color: #dcdcaa;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #555;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #444;
+        }
+
+        td {
+            background-color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        #toggle-darkmode {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        #toggle-darkmode:hover {
+            background-color: #ffa500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo de Resistores para LEDs</h1>
+
+        <button id="toggle-darkmode">Alternar Dark Mode</button>
+
+        <h2>Fórmula utilizada</h2>
+        <p>Usamos a fórmula da Lei de Ohm para calcular os resistores:</p>
+        <pre>R = (V_fonte - V_LED) / I</pre>
+        <p>Onde:</p>
+        <ul>
+            <li><b>R</b>: resistência em ohms (Ω)</li>
+            <li><b>V_fonte</b>: tensão da fonte de alimentação (volts)</li>
+            <li><b>V_LED</b>: tensão de operação do LED (volts)</li>
+            <li><b>I</b>: corrente de operação do LED (amperes, assumimos 20mA ou 0.02A)</li>
+        </ul>
+
+        <h2>Resistores para cada LED</h2>
+
+        <h3>LED Vermelho (1.8V)</h3>
+        <table>
+            <tr>
+                <th>Fonte (V)</th>
+                <th>Resistor (Ω)</th>
+            </tr>
+            <tr><td>3V</td><td>60 Ω</td></tr>
+            <tr><td>5V</td><td>160 Ω</td></tr>
+            <tr><td>9V</td><td>360 Ω</td></tr>
+            <tr><td>12V</td><td>510 Ω</td></tr>
+            <tr><td>15V</td><td>660 Ω</td></tr>
+            <tr><td>19V</td><td>860 Ω</td></tr>
+            <tr><td>24V</td><td>1110 Ω</td></tr>
+        </table>
+
+        <h3>LED Amarelo (2.1V)</h3>
+        <table>
+            <tr>
+                <th>Fonte (V)</th>
+                <th>Resistor (Ω)</th>
+            </tr>
+            <tr><td>3V</td><td>45 Ω</td></tr>
+            <tr><td>5V</td><td>145 Ω</td></tr>
+            <tr><td>9V</td><td>345 Ω</td></tr>
+            <tr><td>12V</td><td>495 Ω</td></tr>
+            <tr><td>15V</td><td>645 Ω</td></tr>
+            <tr><td>19V</td><td>845 Ω</td></tr>
+            <tr><td>24V</td><td>1095 Ω</td></tr>
+        </table>
+
+        <h3>LED Verde (2.2V)</h3>
+        <table>
+            <tr>
+                <th>Fonte (V)</th>
+                <th>Resistor (Ω)</th>
+            </tr>
+            <tr><td>3V</td><td>40 Ω</td></tr>
+            <tr><td>5V</td><td>140 Ω</td></tr>
+            <tr><td>9V</td><td>340 Ω</td></tr>
+            <tr><td>12V</td><td>490 Ω</td></tr>
+            <tr><td>15V</td><td>640 Ω</td></tr>
+            <tr><td>19V</td><td>840 Ω</td></tr>
+            <tr><td>24V</td><td>1090 Ω</td></tr>
+        </table>
+
+        <h3>LED Azul e Branco (3.2V)</h3>
+        <table>
+            <tr>
+                <th>Fonte (V)</th>
+                <th>Resistor (Ω)</th>
+            </tr>
+            <tr><td>3V</td><td>Não aplicável (V_fonte &lt; V_LED)</td></tr>
+            <tr><td>5V</td><td>90 Ω</td></tr>
+            <tr><td>9V</td><td>290 Ω</td></tr>
+            <tr><td>12V</td><td>440 Ω</td></tr>
+            <tr><td>15V</td><td>590 Ω</td></tr>
+            <tr><td>19V</td><td>790 Ω</td></tr>
+            <tr><td>24V</td><td>1040 Ω</td></tr>
+        </table>
+
+        <h2>Faixa de tensão que cada resistor suporta</h2>
+        <p>A potência dissipada pelo resistor pode ser calculada usando a fórmula:</p>
+        <pre>P = I² x R</pre>
+        <p>Resistores comuns suportam até 0.25W (1/4W). Se a potência for maior, considere usar resistores de maior potência.</p>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-darkmode');
+        toggleButton.addEventListener('click', () => {
+            if (document.body.style.backgroundColor === 'white') {
+                document.body.style.backgroundColor = '#1e1e1e';
+                document.body.style.color = '#f5f5f5';
+                toggleButton.style.backgroundColor = '#ffcc00';
+                toggleButton.style.color = 'black';
+            } else {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                toggleButton.style.backgroundColor = '#333';
+                toggleButton.style.color = 'white';
+            }
+        });
+    </script>
+</body>
+</html>

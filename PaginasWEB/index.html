@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos de Manutenção do Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://www.example.com/glass-movie-background.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comandos de Manutenção do Sistema</h1>
+        <h2>DISM /Online /Cleanup-Image /CheckHealth</h2>
+        <p>Verifica se há alguma corrupção no sistema que possa impedir o funcionamento correto do Windows.</p>
+        
+        <h2>DISM /Online /Cleanup-Image /ScanHealth</h2>
+        <p>Realiza uma verificação mais profunda para detectar se há alguma corrupção no sistema.</p>
+        
+        <h2>DISM /Online /Cleanup-Image /RestoreHealth</h2>
+        <p>Repara automaticamente qualquer corrupção encontrada no sistema.</p>
+        
+        <h2>SFC /Scannow</h2>
+        <p>Verifica todos os arquivos protegidos do sistema e substitui os arquivos corrompidos por uma cópia em cache localizada em uma pasta comprimida em %WinDir%\System32\dllcache.</p>
+        
+        <h2>MRT</h2>
+        <p>Executa a Ferramenta de Remoção de Software Mal-Intencionado do Windows para procurar e remover malware.</p>
+        
+        <h2>chkdsk /f /r /x</h2>
+        <p>Verifica o disco rígido em busca de erros e tenta corrigir quaisquer problemas encontrados. O parâmetro <code>/f</code> corrige erros no disco, <code>/r</code> localiza setores defeituosos e recupera informações legíveis, e <code>/x</code> força o volume a ser desmontado antes da verificação.</p>
+        
+        <h2>DISM /Online /Cleanup-Image /RestoreHealth /Source:X:\Sources\install.wim</h2>
+        <p>Repara a imagem do Windows usando um arquivo de imagem específico (<code>install.wim</code>) localizado no caminho fornecido.</p>
+    </div>
+</body>
+</html>
